@@ -1100,16 +1100,16 @@ class TransactionUtil extends Util
         $output['customer_tax_label'] = '';
         $output['customer_custom_fields'] = '';
         if ($il->show_customer == 1) {
-            $output['customer_label'] = !empty($il->customer_label) ? $il->customer_label : '';
+            $output['customer_label'] = !empty($il->customer_label) ? $il->customer_label.": " : '';
             $output['customer_name'] = !empty($customer->name) ? $customer->name: $customer->supplier_business_name;
             $output['customer_mobile'] = $customer->mobile;
             
             if ($receipt_printer_type != 'printer') {
-                $output['customer_info'] .= $customer->contact_address;
+                $output['customer_info'] .= '<span class="f-right text-right">' .$customer->contact_address . '</span>';
                 if (!empty($customer->contact_address)) {
                     $output['customer_info'] .= '<br>';
                 }
-                $output['customer_info'] .= '<b>' . __('contact.mobile') . '</b>: ' . $customer->mobile;
+                $output['customer_info'] .= '<b class="f-left">' . __('contact.mobile') . '</b>: <span class="f-right text-right">' .$customer->mobile . '</span>';
                 if (!empty($customer->landline)) {
                     $output['customer_info'] .= ', ' . $customer->landline;
                 }

@@ -115,7 +115,9 @@
 				<!-- customer info -->
 				@if(!empty($receipt_details->customer_info))
 					<br/>
-					<b>{{ $receipt_details->customer_label }}</b> <br> {!! $receipt_details->customer_info !!} <br>
+					<b>{{ $receipt_details->customer_label }}</b>  {!! $receipt_details->customer_info !!} <br>
+
+					<!-- <b>{{ $receipt_details->customer_label }}</b>  {!! $receipt_details->customer_info !!} <br> -->
 				@endif
 				@if(!empty($receipt_details->client_id_label))
 					<br/>
@@ -611,7 +613,7 @@ table, th, td {
 	        @endif
 	    @endif
 	</div>
-
+	
 	@if(!empty($receipt_details->additional_notes))
 	    <div class="col-xs-12">
 	    	<p>{!! nl2br($receipt_details->additional_notes) !!}</p>
@@ -619,6 +621,12 @@ table, th, td {
     @endif
     
 </div>
+	<div class="textbox-info">
+		<p class="f-left"><strong>{!! $receipt_details->date_label !!}</strong></p>
+		<p class="f-right">
+			{{$receipt_details->invoice_date}}
+		</p>
+	</div>
 <div class="row">
 	@if(!empty($receipt_details->footer_text))
 	<div class="@if($receipt_details->show_barcode || $receipt_details->show_qr_code) col-xs-8 @else col-xs-12 @endif">

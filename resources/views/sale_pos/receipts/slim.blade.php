@@ -88,12 +88,12 @@
 					{{$receipt_details->invoice_no}}
 				</p>
 			</div>
-			<div class="textbox-info">
+			<!-- <div class="textbox-info">
 				<p class="f-left"><strong>{!! $receipt_details->date_label !!}</strong></p>
 				<p class="f-right">
 					{{$receipt_details->invoice_date}}
 				</p>
-			</div>
+			</div> -->
 
 			@if(!empty($receipt_details->due_date_label))
 				<div class="textbox-info">
@@ -197,18 +197,15 @@
 	        @endif
 
 	        <!-- customer info -->
-	        <div class="textbox-info">
-	        	<p style="vertical-align: top;"><strong>
-	        		{{$receipt_details->customer_label ?? ''}}
-	        	</strong></p>
-
-	        	<p>
-	        		@if(!empty($receipt_details->customer_info))
-	        			<div class="bw">
-						{!! $receipt_details->customer_info !!}
-						</div>
+			<div class="textbox-info">
+	        	<p style="vertical-align: top;">
+					<strong>
+						{{$receipt_details->customer_label ?? ''}}
+					</strong>
+					@if(!empty($receipt_details->customer_info))
+	        			{!! $receipt_details->customer_info !!}
 					@endif
-	        	</p>
+				</p>
 	        </div>
 			
 			@if(!empty($receipt_details->client_id_label))
@@ -638,6 +635,13 @@
 				@endif
 			@endif
             <div class="border-bottom width-100">&nbsp;</div>
+			<br>
+			<div class="textbox-info">
+				<p class="f-left"><strong>{!! $receipt_details->date_label !!}</strong></p>
+				<p class="f-right">
+					{{$receipt_details->invoice_date}}
+				</p>
+			</div>
             @if(empty($receipt_details->hide_price) && !empty($receipt_details->tax_summary_label) )
 	            <!-- tax -->
 	            @if(!empty($receipt_details->taxes))
