@@ -1179,9 +1179,13 @@ class ReportController extends Controller
                 $location_id,
                 $created_by
             );
+            $filters = $request->only(['expense_for', 'location_id', 'start_date', 'end_date']);
+
+            $total_expense_data = $this->transactionUtil->getExpenseReport($business_id, $filters, 'total');
+            $total_expense = $total_expense_data->total_expense ?? 0;
 
             $total_sell_return = !empty($sell_return_details['total_sell_return_exc_tax']) ? $sell_return_details['total_sell_return_exc_tax'] : 0;
-            $total_sell = $sell_details['total_sell_exc_tax'] - $total_sell_return;
+            $total_sell = $sell_details['total_sell_exc_tax'] - $total_sell_return - $total_expense;
 
             return [
                 'total_sell_exc_tax' => $sell_details['total_sell_exc_tax'],

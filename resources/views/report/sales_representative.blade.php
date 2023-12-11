@@ -43,14 +43,18 @@
     <!-- Summary -->
     <div class="row">
         <div class="col-sm-12">
-            @component('components.widget', ['title' => __('report.summary')])
+            @component('components.widget', ['title' => __('report.summary')]) 
                 <h3 class="text-muted">
-                    {{ __('report.total_sell') }} - {{ __('lang_v1.total_sales_return') }}: 
+                    {{ __('report.total_sell') }} - {{ __('lang_v1.total_sales_return') }} - {{ __('report.total_expense') }}: : 
                     <span id="sr_total_sales">
                         <i class="fas fa-sync fa-spin fa-fw"></i>
                     </span>
                     -
                     <span id="sr_total_sales_return">
+                        <i class="fas fa-sync fa-spin fa-fw"></i>
+                    </span>
+                    -
+                    <span id="sr_total_expenses">
                         <i class="fas fa-sync fa-spin fa-fw"></i>
                     </span>
                     =
@@ -74,12 +78,12 @@
                         </span>
                     </h3>
                 </div>
-                <h3 class="text-muted">
+                <!-- <h3 class="text-muted">
                     {{ __('report.total_expense') }}: 
                     <span id="sr_total_expenses">
                         <i class="fas fa-sync fa-spin fa-fw"></i>
                     </span>
-                </h3>
+                </h3> -->
             @endcomponent
         </div>
     </div>
