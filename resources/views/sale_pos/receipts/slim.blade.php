@@ -636,6 +636,13 @@
 			@endif
             <div class="border-bottom width-100">&nbsp;</div>
 			<br>
+			<div class="textbosx-info">
+				<p class="f-left"><strong>Customer Sign:</strong></p>
+				<p class="">
+					-------------------------
+				</p>
+			</div>
+			<br>
 			<div class="textbox-info">
 				<p class="f-left"><strong>{!! $receipt_details->date_label !!}</strong></p>
 				<p class="f-right">
