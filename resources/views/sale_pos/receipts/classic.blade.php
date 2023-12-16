@@ -145,7 +145,7 @@
 			</span>
 
 			<span class="pull-right text-left">
-				<b>{{$receipt_details->date_label}}</b> {{$receipt_details->invoice_date}}
+				<!-- <b>{{$receipt_details->date_label}}</b> {{$receipt_details->invoice_date}} -->
 
 				@if(!empty($receipt_details->due_date_label))
 				<br><b>{{$receipt_details->due_date_label}}</b> {{$receipt_details->due_date ?? ''}}
@@ -383,7 +383,7 @@ table, th, td {
 					<tr>
 						<td>{{$payment['method']}}</td>
 						<td class="text-right" >{{$payment['amount']}}</td>
-						<td class="text-right">{{$payment['date']}}</td>
+						<!-- <td class="text-right">{{$payment['date']}}</td> -->
 					</tr>
 				@endforeach
 			@endif
@@ -621,6 +621,13 @@ table, th, td {
     @endif
     
 </div>
+	<div class="textbox-info">
+		<p class="f-left"><strong>Customer Sign:</strong></p>
+		<p class="">
+			-------------------------
+		</p>
+	</div>
+	<br>
 	<div class="textbox-info">
 		<p class="f-left"><strong>{!! $receipt_details->date_label !!}</strong></p>
 		<p class="f-right">
