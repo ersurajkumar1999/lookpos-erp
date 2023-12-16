@@ -621,19 +621,7 @@ table, th, td {
     @endif
     
 </div>
-	<div class="textbox-info">
-		<p class="f-left"><strong>Customer Sign:</strong></p>
-		<p class="">
-			-------------------------
-		</p>
-	</div>
-	<br>
-	<div class="textbox-info">
-		<p class="f-left"><strong>{!! $receipt_details->date_label !!}</strong></p>
-		<p class="f-right">
-			{{$receipt_details->invoice_date}}
-		</p>
-	</div>
+	
 <div class="row">
 	@if(!empty($receipt_details->footer_text))
 	<div class="@if($receipt_details->show_barcode || $receipt_details->show_qr_code) col-xs-8 @else col-xs-12 @endif">
@@ -653,6 +641,12 @@ table, th, td {
 		</div>
 	@endif
 </div>
+	<div class="textbox-info">
+		<p class="f-left"><strong>{!! $receipt_details->date_label !!}</strong></p>
+		<p class="f-right">
+			{{$receipt_details->invoice_date}}
+		</p>
+	</div>
 
 <style type="text/css">
 	body {

@@ -605,20 +605,7 @@
 		@endif
 
 		<div class="border-bottom width-100">&nbsp;</div>
-		<br/>
-		<div class="textbox-info">
-			<p class="f-left"><strong>Customer Sign:</strong></p>
-			<p class="">
-				-------------------------
-			</p>
-		</div>
-		<br>
-		<div class="textbox-info">
-			<p class="f-left"><strong>{!! $receipt_details->date_label !!}</strong></p>
-			<p class="f-right">
-				{{$receipt_details->invoice_date}}
-			</p>
-		</div>
+		
 		@if(empty($receipt_details->hide_price) && !empty($receipt_details->tax_summary_label) )
 		<!-- tax -->
 		@if(!empty($receipt_details->taxes))
@@ -657,6 +644,13 @@
 			{!! $receipt_details->footer_text !!}
 		</p>
 		@endif
+		<br>
+		<div class="textbox-info">
+			<p class="f-left"><strong>{!! $receipt_details->date_label !!}</strong></p>
+			<p class="f-right">
+				{{$receipt_details->invoice_date}}
+			</p>
+		</div>
 	</div>
 	<!-- <button id="btnPrint" class="hidden-print">Print</button>
         <script src="script.js"></script> -->
